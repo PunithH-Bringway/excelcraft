@@ -403,7 +403,7 @@
   if (reducedMQ.addEventListener) reducedMQ.addEventListener('change', onReducedChange); else reducedMQ.addListener(onReducedChange);
 
   /* ---------- enquiry form: honest mailto composer ---------- */
-  var ENQUIRY_TO = 'bgm@excelcraft.in';
+  var ENQUIRY_TO = 'giridhar@excelcraft.co.in';
   var form = document.getElementById('enquiry');
   if (form) {
     form.addEventListener('submit', function (e) {
