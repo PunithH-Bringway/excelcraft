@@ -370,7 +370,7 @@
       var tw = 0.62 + 0.38 * Math.sin(now / 1600 + m.ph);
       ctx.beginPath();
       ctx.arc(m.x / 100 * w, m.y / 100 * h, m.s, 0, 6.2832);
-      ctx.fillStyle = 'rgba(255,92,64,' + (m.a * tw).toFixed(3) + ')';
+      ctx.fillStyle = 'rgba(130,190,255,' + (m.a * tw).toFixed(3) + ')';
       ctx.fill();
     }
     motesRaf = requestAnimationFrame(moteFrame);
