@@ -552,3 +552,18 @@ html.js .draw-facts li{opacity:.7}
   .static-hero{display:block;position:static;background:none;text-shadow:none;color:#000}
   body{background:#fff;color:#000}
 }
+
+/* ---- privacy notice bar (the site sets no cookies; this just says so once) ---- */
+.notice{
+  position:fixed;left:0;right:0;bottom:0;z-index:150;
+  display:flex;align-items:center;justify-content:center;gap:clamp(14px,3vw,30px);flex-wrap:wrap;
+  padding:16px clamp(18px,4vw,40px);
+  background:rgba(10,11,15,.96);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);
+  transform:translateY(100%);transition:transform .5s var(--ease-out);
+}
+.notice.up{transform:none}
+.notice p{margin:0;font-size:.92rem;color:var(--text-secondary);max-width:70ch}
+.notice strong{color:var(--text-primary)}
+.notice .btn{padding:10px 24px;font-size:.88rem;flex:0 0 auto}
+@media (max-width:600px){.notice{justify-content:flex-start}.notice p{font-size:.86rem}}

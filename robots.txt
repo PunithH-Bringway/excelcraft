@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://punithh-bringway.github.io/excelcraft/sitemap.xml

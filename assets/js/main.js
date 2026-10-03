@@ -424,6 +424,25 @@
     });
   }
 
+  /* ---------- privacy notice: shown once, remembered on this device ----------
+     The site sets no cookies; the bar states that, so this is a notice, not a
+     consent gate. Storage can throw in private mode, hence the try/catch. */
+  var notice = document.getElementById('notice');
+  if (notice) {
+    var KEY = 'ec-privacy-notice';
+    var seen = false;
+    try { seen = localStorage.getItem(KEY) === '1'; } catch (e) { seen = false; }
+    if (!seen) {
+      notice.hidden = false;
+      requestAnimationFrame(function () { notice.classList.add('up'); });
+      document.getElementById('notice-ok').addEventListener('click', function () {
+        notice.classList.remove('up');
+        try { localStorage.setItem(KEY, '1'); } catch (e) { /* private mode: it reappears next visit */ }
+        setTimeout(function () { notice.hidden = true; }, reducedMQ.matches ? 0 : 500);
+      });
+    }
+  }
+
   var yr = document.getElementById('year');
   if (yr) yr.textContent = String(new Date().getFullYear());
   function boot() {
